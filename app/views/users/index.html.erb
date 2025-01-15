@@ -1,0 +1,7 @@
+<div class="container" style="width: 800px; justify-content: center; display: grid ; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+  <% @users.each do |user| %>
+    <div class="item" style="width:120px; padding: 20px; height: 30px; border:solid 1px #ccc; text-align: center; background-color:#f4f4f4;" >
+      <%= user.name %>
+    </div>
+  <% end %>
+</div>

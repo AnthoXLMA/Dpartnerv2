@@ -1,0 +1,20 @@
+<h1><%= @profile.name %>'s Profile</h1>
+<p>Age: <%= @profile.age %></p>
+<p>Dance Style: <%= @profile.dance_style %></p>
+<p>Dances: <% @profile.dances %>
+</p>
+<p>Bio: <%= @profile.bio %></p>
+
+<%= link_to 'Edit Profile', edit_profile_path(@profile) %>
+
+
+<%= link_to 'Home', root_path %>
+
+<div class="container" style="width: 800px; justify-content: center; display: grid ; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+<% @users.each do |partner| %>
+    <div class="item" style="width:120px; padding: 20px; height: 30px; border:solid 1px #ccc; text-align: center; background-color:#f4f4f4;" >
+      <%= partner.name %>
+    </div>
+  <br>
+  <% end %>
+</div>
