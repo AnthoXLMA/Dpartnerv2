@@ -1,0 +1,25 @@
+<h1><%= @event.title %></h1>
+<p><%= @event.description %></p>
+<p><%= @event.start_time %></p>
+<p><%= @event.location %></p>
+
+<div id="map"></div>
+
+<%= link_to 'Edit Event', edit_event_path(@event) %> |
+<%= link_to 'Back to Events', events_path %>
+
+<script>
+  function initMap() {
+    var eventLocation = { lat: <%= @event.latitude %>, lng: <%= @event.longitude %> };
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: eventLocation,
+    });
+    var marker = new google.maps.Marker({
+      position: eventLocation,
+      map: map,
+    });
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>

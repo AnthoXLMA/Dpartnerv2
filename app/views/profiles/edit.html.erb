@@ -1,0 +1,51 @@
+<%= form_for(@profile) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+     <div class="field">
+    <%= f.label :gender, "Select Gender" %>
+    <%= f.select :gender, options_for_select(['Gentleman', 'Lady'], @profile.gender) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender, "Select Gender" %><br>
+
+    <%= f.radio_button :gender, "Gentleman" %>
+    <%= f.label :gender_gentleman, "Gentleman" %><br>
+
+    <%= f.radio_button :gender, "Lady" %>
+    <%= f.label :gender_lady, "Lady" %><br>
+
+  </div>
+
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div>
+    <%= f.label :birthday %>
+    <%= f.number_field :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dances, "Select Dances" %><br>
+    <%= f.collection_check_boxes :dance_ids, Dance.all, :id, :name do |b| %>
+      <div>
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
