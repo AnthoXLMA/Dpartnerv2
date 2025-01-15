@@ -47,6 +47,9 @@ gem "bootsnap", require: false
 gem 'devise'                # For authentication
 gem 'geocoder'              # For geolocation
 gem 'faker'               # For fake seeds
+gem 'mapbox-gl-rails'              # For map rendering (or use Google Maps)
+gem 'carrierwave'                 # For image uploads (user profile picture)
+gem 'simple_form'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

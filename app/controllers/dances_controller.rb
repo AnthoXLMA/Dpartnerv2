@@ -5,5 +5,6 @@ class DancesController < ApplicationController
 
   def show
     @dance = Dance.find(params[:id])  # Find a dance by ID
+    @users = User.all
   end
 end
